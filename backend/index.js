@@ -11,10 +11,10 @@ const playlistRoutes = require('./routes/playlist');
 
 const path = require('path');
 // Serve static files from the 'build' directory
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 // Serve the index.html for all other routes to enable client-side routing
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname,'frontend', 'build', 'index.html'));
 });
 
 app.use(express.json())
