@@ -9,6 +9,21 @@ const authRoutes = require('./routes/auth');
 const songRoutes = require('./routes/song');
 const playlistRoutes = require('./routes/playlist');
 
+const path = require('path');
+// Serve static files from the 'build' directory
+app.use(express.static(path.join(__dirname, 'build')));
+// Serve the index.html for all other routes to enable client-side routing
+app.get('*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
+
+
 app.use(express.json())
 app.use(cors());
 
