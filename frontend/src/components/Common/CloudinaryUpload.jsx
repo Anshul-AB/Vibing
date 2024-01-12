@@ -1,4 +1,4 @@
-import { cloudinary_upload_preset } from "../../config";
+import { cloudinary_upload_preset } from "../../configure";
 import {openUploadWidget} from "../../utils/CloudinaryService";
 
 const CloudinaryUpload = ({setUrl, setName}) => {
