@@ -4,21 +4,19 @@ const cors = require("cors");
 require("dotenv").config();
 require("./connection.js/connection");
 const passport = require("./auth-jwt/auth-jwt");
+const path = require('path');
 //ROUTES PATH
 const authRoutes = require("./routes/auth");
 const songRoutes = require("./routes/song");
 const playlistRoutes = require("./routes/playlist");
 
-// const path = require('path');
-// // Serve static files from the 'build' directory
-// app.use(express.static(path.join(__dirname, 'frontend', 'build')));
-// // Serve the index.html for all other routes to enable client-side routing
-// app.get('*', function (req, res) {
-//   res.sendFile(path.join(__dirname,'frontend', 'build', 'index.html'));
-// });
-
 app.use(express.json());
-app.use(cors());
+const _dirname = path.dirname("");
+const buildpath = path.join(_dirname, "./frontend/build");
+app.use(express.static(buildpath))
+app.use(cors({
+  "origin":"*",
+}));
 
 const port = process.env.PORT || 5000;
 

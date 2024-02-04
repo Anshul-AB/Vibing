@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "��#\u0000 \u0000V\u0000i\u0000b\u0000i\u0000n\u0000g\u0000\r\u0000 \u0000",
   "main": ".backend/index.js",
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd ./backend && node index.js",
@@ -19,6 +18,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.0.3",
     "passport": "^0.7.0",
-    "passport-jwt": "^4.0.1"
+    "passport-jwt": "^4.0.1",
+    "path": "^0.12.7"
   }
 }
