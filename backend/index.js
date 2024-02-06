@@ -12,17 +12,25 @@ const playlistRoutes = require("./routes/playlist");
 
 app.use(express.json());
 const _dirname = path.dirname("");
-const buildpath = path.join(_dirname, "./frontend/build");
-app.use(express.static(buildpath))
+const buildpath = path.join(_dirname, "../frontend/build");
+app.use(express.static(buildpath));
+
+// Apply CORS middleware
 app.use(cors({
-  "origin":"*",
+  origin: '*'
 }));
 
 const port = process.env.PORT || 5000;
 
-app.get("/", (req, res) => {
-  res.send("hello world");
+app.get('*', (req, res) => {
+  res.sendFile(path.join(buildpath, 'index.html'));
 });
+
+
+
+// app.get("/", (req, res) => {
+//   res.send("hello world");
+// });
 
 //Routes Middleware
 app.use("/auth", authRoutes);
@@ -33,5 +41,5 @@ app.use("/playlist", playlistRoutes);
 app.use(passport.initialize());
 
 app.listen(port, () => {
-  console.log(`Server is listening at port`, +port);
+  console.log(`Server is listening at port`, port);
 });
