@@ -23,7 +23,7 @@ app.use(cors({
 const port = process.env.PORT || 5000;
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(buildpath, 'index.html'));
+  res.sendFile('index.html', { root: buildpath });
 });
 
 
