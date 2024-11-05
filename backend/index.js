@@ -26,7 +26,7 @@ app.use(express.static(path.join(_dirname, "/frontend/build")));
 
 app.get("*", (req, res) => {
   // Handle all other routes by sending the 'index.html' file
-  res.sendFile(path.resolve(_dirname, "frontend", "build", "index.html"));
+  res.sendFile(path.join(_dirname, "frontend", "build", "index.html"));
 });
 
 //Routes Middleware
@@ -38,5 +38,5 @@ app.use("/playlist", playlistRoutes);
 app.use(passport.initialize());
 
 app.listen(port, () => {
-  console.log(`Server is listening at port`, port);
+  console.log(`Server is listening at port ${port}` );
 });
