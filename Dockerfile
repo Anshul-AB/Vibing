@@ -12,7 +12,7 @@ WORKDIR /app
 COPY frontend/package.json ./frontend/
 RUN npm install --prefix ./frontend
 COPY frontend/ ./frontend/
-RUN npm run build --prefix ./frontend
+RUN npm run build
 
 # Final Image
 FROM node:18.9.1 as final
