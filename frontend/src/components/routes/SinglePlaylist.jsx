@@ -14,13 +14,13 @@ const SinglePlaylist = () => {
         "/playlist/get/playlist/" + playlistId
       );
       setPlaylistDetails(response)
-      console.log(response);
+      // (response);
     };
     getData();
     // eslint-disable-next-line
   }, []);
 
-  console.log(playlistDetails.songs);
+  (playlistDetails.songs);
   return (
     <LoggedInContainer>
       <div className="text-pink-300 text-2xl font-semibold pb-5">

@@ -81,5 +81,3 @@ const getToken =() =>{
     );
     return accessToken;
 }
-
-  

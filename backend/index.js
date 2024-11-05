@@ -11,9 +11,6 @@ const songRoutes = require("./routes/song");
 const playlistRoutes = require("./routes/playlist");
 
 app.use(express.json());
-const _dirname = path.dirname("");
-const buildpath = path.join(_dirname, "../frontend/build");
-app.use(express.static(buildpath));
 
 // Apply CORS middleware
 app.use(cors({
@@ -22,14 +19,15 @@ app.use(cors({
 
 const port = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: buildpath });
+const _dirname = path.resolve();
+
+// Serve static files from the 'frontend/build' directory
+app.use(express.static(path.join(_dirname, "/frontend/build")));
+
+app.get("*", (req, res) => {
+  // Handle all other routes by sending the 'index.html' file
+  res.sendFile(path.resolve(_dirname, "frontend", "build", "index.html"));
 });
-
-
-// app.get("/", (req, res) => {
-//   res.send("hello world");
-// });
 
 //Routes Middleware
 app.use("/auth", authRoutes);

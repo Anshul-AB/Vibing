@@ -1,10 +1,131 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Common/Sidebar";
 import Navbar from "../Common/Navbar";
 import Playlist from "../Common/Playlist";
 const cardsData = require('../../Api/api');
 
 const Home = () => {
+  // const [myArray , setMyArray]= useState([{
+  //   name: "Open Day Event",
+  //   date: "July 7",
+  //   topics: [
+  //     {
+  //       title: "Engineering",
+  //       id: 1,
+  //       description: "some text here",
+  //       programs: [
+  //         {
+  //           title: "Some title",
+  //           id: 1,
+  //           description: "Some description",
+  //           price: 7,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 2,
+  //           description: "Some description",
+  //           price: 15,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 3,
+  //           description: "Some description",
+  //           price: 0,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 4,
+  //           description: "Some description",
+  //           price: 5,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 5,
+  //           description: "Some description",
+  //           price: 19,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "History",
+  //       id: 2,
+  //       description: "some text here",
+  //       programs: [
+  //         {
+  //           title: "Some title",
+  //           id: 1,
+  //           description: "Some description",
+  //           price: 30,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 2,
+  //           description: "Some description",
+  //           price: 30,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 3,
+  //           description: "Some description",
+  //           price: 30,
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "English",
+  //       id: 3,
+  //       description: "some text here",
+  //       programs: [
+  //         {
+  //           title: "Some title",
+  //           id: 1,
+  //           description: "Some description",
+  //           price: 30,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 2,
+  //           description: "Some description",
+  //           price: 30,
+  //         },
+  //         {
+  //           title: "Some title",
+  //           id: 3,
+  //           description: "Some description",
+  //           price: 30,
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // }])
+
+
+  // console.log("121212", myArray[0]?.topics[0]?.programs[0]?.title)
+
+//  const newArray = myArray.map((item)=>{
+//   return{
+//     ...item, topics:item.topics.map((events)=>{
+//       return{
+//         ...events, programs: events.programs.map((pro) => {
+//           if(pro.price >= 7){
+
+//             return {
+//               ...pro , test: pro.title + ' ' + pro?.description
+//             }
+//           }
+//           else{
+//             return{
+//               ...pro
+//             }
+//           }
+//         })
+//       }
+//     })
+//   }
+// })
+
+// console.log("newArray---------------" ,newArray);
+
   return (
     <div >
       <div className="min-h-screen w-screen grid grid-cols-6">
