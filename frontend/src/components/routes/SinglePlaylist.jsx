@@ -20,7 +20,7 @@ const SinglePlaylist = () => {
     // eslint-disable-next-line
   }, []);
 
-  (playlistDetails.songs);
+  // (playlistDetails.songs);
   return (
     <LoggedInContainer>
       <div className="text-pink-300 text-2xl font-semibold pb-5">
