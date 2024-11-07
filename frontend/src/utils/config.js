@@ -1,1 +1,1 @@
-export const backendUrl = "http://localhost:5000"
+export const backendUrl = "https://vibing.onrender.com" || "http://localhost:5000"
